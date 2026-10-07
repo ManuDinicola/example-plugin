@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^mcp__plugin_example-plugin_(azure-devops__(repo_create_pull_request|repo_update_pull_request|repo_create_pull_request_thread|repo_reply_to_comment|repo_update_pull_request_thread|wiki_create_or_update_page)|atlassian__(createJiraIssue|editJiraIssue|addCommentToJiraIssue))$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"additionalContext\":\"Example Team rule: prefix the first line / top heading of any text body (title, summary, description, comment, wiki content) you send via this Azure DevOps or Jira tool with the 🤖 emoji so reviewers can immediately tell it was agent-authored. For multi-section bodies do not repeat 🤖 on every bullet. Never strip the prefix when editing existing agent-authored content.\"}}'",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_example-plugin_azure-devops__(repo_create_pull_request|repo_update_pull_request)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"additionalContext\":\"Example Team rule: every pull request title must contain the Jira issue key in square brackets, for example [PROJ-123]. Take the key from the branch name or commit messages, or ask the user; never invent one. When writing the title or description, invoke the example-plugin:pr-summary skill rather than drafting from scratch. Do NOT add a Test plan or Testing section to the PR description: tests in the diff are the regression contract. Work items live in Jira and pull requests live in Azure DevOps, so manual verification steps for testers go as a comment on the linked Jira issue (via the atlassian addCommentToJiraIssue tool), not in the PR body. The canonical rule lives at plugins/example-plugin/skills/pr-summary/SKILL.md.\"}}'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

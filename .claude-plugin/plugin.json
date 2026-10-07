@@ -1,0 +1,15 @@
+{
+  "name": "example-pluggin",
+  "version": "0.0.1",
+  "description": "Example plugin: Azure DevOps MCP server, agent-authorship hooks and a PR summary skill",
+  "author": {
+    "name": "Emmanuel Di Nicola",
+    "email": "manu.dinicola@gmail.com"
+  },
+  "homepage": "https://github.com/manudinicola",
+  "keywords": [
+    "example",
+    "dotnet",
+    "azure-devops"
+  ]
+}

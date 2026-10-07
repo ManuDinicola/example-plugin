@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "azure-devops": {
+      "command": "npx",
+      "args": ["-y", "@azure-devops/mcp", "${AZURE_DEVOPS_ORG}", "-a", "envvar"],
+      "env": {
+        "ADO_MCP_AUTH_TOKEN": "${AZURE_DEVOPS_PAT}"
+      }
+    },
+    "atlassian": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v2/mcp"
+    }
+  }
+}

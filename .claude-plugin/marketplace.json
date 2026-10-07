@@ -1,0 +1,14 @@
+{
+  "name": "example-marketplace",
+  "description": "Marketplace for the example plugin",
+  "owner": {
+    "name": "Emmanuel Di Nicola"
+  },
+  "plugins": [
+    {
+      "name": "example-plugin",
+      "source": "./",
+      "description": "Azure DevOps and Jira MCP servers, agent-authorship hooks, PR summary and security review skills"
+    }
+  ]
+}
